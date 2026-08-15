@@ -1,274 +1,511 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Saad Raees Mapkar | Personal Website</title>
+<title>Saad Raees Mapkar | Cyber Security</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            background: #080812;
-            color: white;
-            line-height: 1.6;
-        }
+body {
+    background: #02070a;
+    color: #ffffff;
+    overflow-x: hidden;
+}
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(8, 8, 18, 0.85);
-            backdrop-filter: blur(12px);
-            padding: 15px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+/* Animated background */
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #00ff99;
+    opacity: 0.08;
+    filter: blur(120px);
+    border-radius: 50%;
+    top: -150px;
+    left: -150px;
+    z-index: -1;
+}
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #00ccff;
+    opacity: 0.07;
+    filter: blur(120px);
+    border-radius: 50%;
+    bottom: -200px;
+    right: -150px;
+    z-index: -1;
+}
 
-        .logo span {
-            color: #00e5ff;
-        }
+/* Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 7%;
+    background: rgba(2, 7, 10, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0,255,153,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff99;
+}
 
-        nav a:hover {
-            color: #00e5ff;
-        }
+.logo span {
+    color: white;
+}
 
-        section {
-            padding: 100px 8%;
-        }
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 120px;
-            background:
-                radial-gradient(circle at top, #172044, #080812 60%);
-        }
+nav a:hover {
+    color: #00ff99;
+}
 
-        .profile {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #00e5ff;
-            box-shadow: 0 0 35px rgba(0,229,255,0.5);
-            margin-bottom: 25px;
-        }
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+    background:
+        radial-gradient(circle at center, rgba(0,255,153,0.08), transparent 45%);
+}
 
-        .hero h1 {
-            font-size: clamp(38px, 8vw, 70px);
-            margin-bottom: 10px;
-        }
+.hero-content {
+    max-width: 850px;
+}
 
-        .hero h1 span {
-            color: #00e5ff;
-        }
+.profile {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00ff99;
+    box-shadow:
+        0 0 20px #00ff99,
+        0 0 60px rgba(0,255,153,0.3);
+    margin-bottom: 30px;
+    animation: float 4s ease-in-out infinite;
+}
 
-        .hero p {
-            color: #bfc5d9;
-            font-size: 18px;
-            max-width: 650px;
-            margin: auto;
-        }
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 13px 28px;
-            border-radius: 30px;
-            background: #00e5ff;
-            color: #05050a;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid #00ff99;
+    border-radius: 30px;
+    color: #00ff99;
+    font-size: 13px;
+    margin-bottom: 20px;
+    background: rgba(0,255,153,0.05);
+}
 
-        .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 25px rgba(0,229,255,0.6);
-        }
+.hero h1 {
+    font-size: clamp(42px, 9vw, 78px);
+    margin-bottom: 12px;
+}
 
-        .title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 40px;
-        }
+.hero h1 span {
+    color: #00ff99;
+    text-shadow: 0 0 20px rgba(0,255,153,0.6);
+}
 
-        .title span {
-            color: #00e5ff;
-        }
+.hero h2 {
+    font-size: clamp(20px, 4vw, 30px);
+    color: #00ccff;
+    margin-bottom: 20px;
+}
 
-        .about {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            color: #c9ccda;
-            font-size: 17px;
-        }
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #aeb8bd;
+    font-size: 17px;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+.buttons {
+    margin-top: 30px;
+}
 
-        .card {
-            background: rgba(255,255,255,0.05);
-            padding: 30px 20px;
-            border-radius: 18px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: 0.3s;
-        }
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    margin: 7px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #00e5ff;
-            box-shadow: 0 10px 30px rgba(0,229,255,0.12);
-        }
+.primary {
+    background: #00ff99;
+    color: #00140c;
+    box-shadow: 0 0 20px rgba(0,255,153,0.3);
+}
 
-        .card .icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
+.secondary {
+    border: 1px solid #00ff99;
+    color: #00ff99;
+}
 
-        .card h3 {
-            margin-bottom: 8px;
-        }
+.btn:hover {
+    transform: translateY(-4px);
+}
 
-        .card p {
-            color: #bfc5d9;
-            font-size: 14px;
-        }
+/* Sections */
+section {
+    padding: 100px 8%;
+}
 
-        .contact {
-            text-align: center;
-            background: #0c0d19;
-        }
+.title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 50px;
+}
 
-        .instagram {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 14px 30px;
-            border-radius: 30px;
-            background: #e1306c;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.title span {
+    color: #00ff99;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #777d91;
-            font-size: 13px;
-        }
+/* About */
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,255,153,0.15);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.3);
+}
 
-        @media (max-width: 650px) {
-            header {
-                padding: 14px 5%;
-            }
+.about-box p {
+    color: #b7c1c5;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
 
-            nav a {
-                margin-left: 8px;
-                font-size: 12px;
-            }
+.about-box strong {
+    color: #00ff99;
+}
 
-            section {
-                padding: 80px 6%;
-            }
+/* Cards */
+.cards {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+    gap: 20px;
+}
 
-            .profile {
-                width: 140px;
-                height: 140px;
-            }
-        }
-    </style>
+.card {
+    padding: 30px 20px;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(0,255,153,0.12);
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00ff99;
+    box-shadow: 0 0 30px rgba(0,255,153,0.12);
+}
+
+.icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #9ba7ac;
+    font-size: 14px;
+}
+
+/* Education */
+.education {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.education-box {
+    padding: 35px;
+    border-left: 3px solid #00ff99;
+    background: rgba(0,255,153,0.03);
+    border-radius: 0 18px 18px 0;
+}
+
+.education-box h3 {
+    color: #00ff99;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.education-box p {
+    color: #adb7bb;
+}
+
+/* Personal information */
+.info-grid {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 18px;
+}
+
+.info {
+    padding: 22px;
+    background: rgba(255,255,255,0.035);
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.07);
+}
+
+.info small {
+    color: #00ff99;
+}
+
+.info p {
+    margin-top: 6px;
+    color: #ddd;
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+    background: rgba(0,255,153,0.025);
+}
+
+.contact p {
+    color: #aab4b8;
+}
+
+.instagram {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 30px;
+    border-radius: 30px;
+    background: #e1306c;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.instagram:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(225,48,108,0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #657177;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 13px;
+}
+
+/* Mobile */
+@media(max-width:650px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    nav a {
+        margin-left: 7px;
+        font-size: 11px;
+    }
+
+    section {
+        padding: 80px 6%;
+    }
+
+    .profile {
+        width: 145px;
+        height: 145px;
+    }
+
+    .about-box {
+        padding: 25px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">Saad<span>.</span></div>
+    <div class="logo">SAAD<span>.</span></div>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#hobbies">Hobbies</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
 
+<!-- HOME -->
 <section class="hero" id="home">
-    <div>
-        <!-- Your photo will go here -->
-        <img src="profile.jpg" alt="Saad Raees Mapkar" class="profile">
 
-        <h1>Hi, I'm <span>Saad</span></h1>
+    <div class="hero-content">
+
+        <img src="profile.jpg"
+             alt="Saad Raees Mapkar"
+             class="profile">
+
+        <div class="badge">
+            🛡️ CYBER SECURITY STUDENT
+        </div>
+
+        <h1>
+            Hi, I'm <span>Saad</span>
+        </h1>
+
+        <h2>
+            Cyber Security Enthusiast
+        </h2>
 
         <p>
-            Saad Raees Mapkar — a Cyber Security student,
-            movie lover, and someone who is always curious to learn something new.
+            Welcome to my personal space on the internet.
+            I'm Saad Raees Mapkar, a Cyber Security student
+            from Mumbai who loves technology, movies and learning new things.
         </p>
 
-        <a href="#about" class="btn">Explore My Profile ↓</a>
+        <div class="buttons">
+            <a href="#about" class="btn primary">
+                Explore My Profile
+            </a>
+
+            <a href="https://www.instagram.com/saadmapkar/"
+               target="_blank"
+               class="btn secondary">
+                Instagram
+            </a>
+        </div>
+
     </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
-    <h2 class="title">About <span>Me</span></h2>
 
-    <div class="about">
+    <h2 class="title">
+        About <span>Me</span>
+    </h2>
+
+    <div class="about-box">
+
         <p>
             My name is <strong>Saad Raees Mapkar</strong>.
-            I was born in Mumbai on <strong>16 December 2005</strong>.
-            I am currently studying Cyber Security and developing my knowledge
-            and skills in the world of technology and digital security.
+            I was born in Mumbai on
+            <strong>16 December 2005</strong>.
         </p>
-
-        <br>
 
         <p>
-            Outside of my studies, I enjoy watching movies,
-            especially action, comedy and adventure films.
-            I believe in learning, exploring new things and building
-            a better version of myself every day.
+            I am currently studying
+            <strong>Cyber Security</strong> and developing
+            my knowledge in technology and digital security.
         </p>
+
+        <p>
+            I enjoy exploring new technologies and continuously
+            learning new things that can help me grow personally
+            and professionally.
+        </p>
+
     </div>
+
 </section>
 
-<section id="hobbies">
-    <h2 class="title">My <span>Interests</span></h2>
+<!-- PERSONAL INFO -->
+<section>
+
+    <h2 class="title">
+        Personal <span>Info</span>
+    </h2>
+
+    <div class="info-grid">
+
+        <div class="info">
+            <small>NAME</small>
+            <p>Saad Raees Mapkar</p>
+        </div>
+
+        <div class="info">
+            <small>BORN</small>
+            <p>Mumbai, India</p>
+        </div>
+
+        <div class="info">
+            <small>BIRTH DATE</small>
+            <p>16 December 2005</p>
+        </div>
+
+        <div class="info">
+            <small>FIELD</small>
+            <p>Cyber Security</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <h2 class="title">
+        My <span>Interests</span>
+    </h2>
 
     <div class="cards">
 
@@ -276,59 +513,88 @@
             <div class="icon">🛡️</div>
             <h3>Cyber Security</h3>
             <p>
-                Currently studying Cyber Security and exploring
-                the world of technology and digital security.
+                Learning about cyber security,
+                technology and digital protection.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>Technology</h3>
+            <p>
+                Exploring technology and discovering
+                new things in the digital world.
             </p>
         </div>
 
         <div class="card">
             <div class="icon">🎬</div>
-            <h3>Action Movies</h3>
+            <h3>Movies</h3>
             <p>
-                I enjoy watching exciting action movies
-                filled with adventure and thrilling moments.
+                I enjoy watching action,
+                comedy and adventure movies.
             </p>
         </div>
 
         <div class="card">
-            <div class="icon">😂</div>
-            <h3>Comedy Movies</h3>
+            <div class="icon">🚀</div>
+            <h3>Learning</h3>
             <p>
-                Comedy movies are one of my favorite ways
-                to relax and have a good time.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🌎</div>
-            <h3>Adventure</h3>
-            <p>
-                I love adventure-themed movies and stories
-                that take you into exciting new worlds.
+                Always interested in learning,
+                improving and trying new things.
             </p>
         </div>
 
     </div>
+
 </section>
 
-<section id="contact" class="contact">
-    <h2 class="title">Connect <span>With Me</span></h2>
+<!-- EDUCATION -->
+<section>
+
+    <h2 class="title">
+        My <span>Education</span>
+    </h2>
+
+    <div class="education">
+
+        <div class="education-box">
+
+            <h3>Cyber Security</h3>
+
+            <p>
+                Currently studying Cyber Security
+                and building my foundation in the field
+                of digital security and technology.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h2 class="title">
+        Connect <span>With Me</span>
+    </h2>
 
     <p>
-        Want to know more about me?
-        Follow me on Instagram.
+        You can find me on Instagram.
     </p>
 
-    <a
-        href="https://www.instagram.com/saadmapkar/"
-        target="_blank"
-        class="instagram">
+    <a href="https://www.instagram.com/saadmapkar/"
+       target="_blank"
+       class="instagram">
         📷 Follow Me on Instagram
     </a>
+
 </section>
 
 <footer>
-    © 2026 Saad Raees Mapkar. All Rights Reserved.
+    © 2026 Saad Raees Mapkar • Personal Website
 </footer>
 
 </body>
