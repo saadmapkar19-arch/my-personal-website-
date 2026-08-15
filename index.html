@@ -699,6 +699,111 @@ function rps() {
 
     alert("You: " + player + "\nComputer: " + computer);
 }
+    /* =========================
+   GAMES SECTION
+   ========================= */
+
+#games {
+    padding: 100px 8%;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, rgba(0,255,153,0.08), transparent 45%);
+}
+
+#games .title {
+    font-size: clamp(32px, 6vw, 50px);
+    margin-bottom: 45px;
+    color: white;
+}
+
+#games .title span {
+    color: #00ff99;
+    text-shadow: 0 0 20px rgba(0,255,153,0.6);
+}
+
+.games-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.game-box {
+    padding: 30px 22px;
+    border: 1px solid rgba(0,255,153,0.45);
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        rgba(0,255,153,0.10),
+        rgba(0,20,25,0.85)
+    );
+    box-shadow:
+        0 0 20px rgba(0,255,153,0.08),
+        inset 0 0 20px rgba(0,255,153,0.03);
+    transition: 0.35s ease;
+}
+
+.game-box:hover {
+    transform: translateY(-10px);
+    border-color: #00ff99;
+    box-shadow:
+        0 0 25px rgba(0,255,153,0.35),
+        0 0 60px rgba(0,255,153,0.12);
+}
+
+.game-box h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #00ff99;
+}
+
+.game-box p {
+    color: #aebfc4;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.game-box button {
+    border: 1px solid #00ff99;
+    background: transparent;
+    color: #00ff99;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.game-box button:hover {
+    background: #00ff99;
+    color: #001510;
+    box-shadow: 0 0 25px rgba(0,255,153,0.6);
+    transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    #games {
+        padding: 80px 6%;
+    }
+
+    .games-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .game-box {
+        padding: 28px 20px;
+    }
+
+    .game-box h3 {
+        font-size: 20px;
+    }
+    }
 </script>
 
 </body>
