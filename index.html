@@ -574,7 +574,39 @@ footer {
     </div>
 
 </section>
+    
+</section>
 
+<!-- GAMES -->
+<section id="games">
+
+    <h2 class="title">Play <span>Games</span></h2>
+
+    <div class="games-container">
+
+        <div class="game-box">
+            <h3>🎯 Guess the Number</h3>
+            <p>Try to guess the secret number!</p>
+            <button onclick="guessNumber()">Play Game</button>
+        </div>
+
+        <div class="game-box">
+            <h3>❤️ Love Quiz</h3>
+            <p>Test your romantic knowledge!</p>
+            <button onclick="loveQuiz()">Play Game</button>
+        </div>
+
+        <div class="game-box">
+            <h3>✊ Rock Paper Scissors</h3>
+            <p>Challenge the computer!</p>
+            <button onclick="rps()">Play Game</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
 <!-- CONTACT -->
 <section class="contact" id="contact">
 
@@ -636,6 +668,37 @@ function typeEffect() {
 }
 
 typeEffect();
+    function guessNumber() {
+    const secret = Math.floor(Math.random() * 10) + 1;
+    const guess = prompt("🎯 Guess a number between 1 and 10:");
+
+    if (guess == secret) {
+        alert("🎉 Correct! You guessed it!");
+    } else {
+        alert("❌ Wrong! The number was " + secret);
+    }
+}
+
+function loveQuiz() {
+    const answer = prompt("❤️ What is the most important thing in a relationship?\n\nA) Trust\nB) Money\nC) Games");
+
+    if (answer && answer.toUpperCase() === "A") {
+        alert("❤️ Correct! Trust is everything!");
+    } else {
+        alert("💕 Nice try! The answer is Trust.");
+    }
+}
+
+function rps() {
+    const choices = ["Rock", "Paper", "Scissors"];
+    const player = prompt("✊ Rock, Paper or Scissors?");
+
+    if (!player) return;
+
+    const computer = choices[Math.floor(Math.random() * 3)];
+
+    alert("You: " + player + "\nComputer: " + computer);
+}
 </script>
 
 </body>
