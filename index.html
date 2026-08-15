@@ -804,6 +804,44 @@ function rps() {
         font-size: 20px;
     }
     }
+    <script>
+
+function guessNumber() {
+    const secret = Math.floor(Math.random() * 10) + 1;
+    const guess = prompt("🎯 Guess a number between 1 and 10:");
+
+    if (guess == secret) {
+        alert("🎉 Correct! You guessed it!");
+    } else {
+        alert("❌ Wrong! The number was " + secret);
+    }
+}
+
+function loveQuiz() {
+    const answer = prompt(
+        "❤️ What is the most important thing in a relationship?\n\nA) Trust\nB) Money\nC) Games"
+    );
+
+    if (answer && answer.toUpperCase() === "A") {
+        alert("❤️ Correct! Trust is everything!");
+    } else {
+        alert("💕 The answer is Trust!");
+    }
+}
+
+function rps() {
+    const choices = ["Rock", "Paper", "Scissors"];
+    const player = prompt("✊ Type Rock, Paper or Scissors:");
+
+    if (!player) return;
+
+    const computer = choices[Math.floor(Math.random() * 3)];
+
+    alert("You: " + player + "\nComputer: " + computer);
+}
+
+</script>
+    
 </script>
 
 </body>
