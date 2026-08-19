@@ -1,849 +1,396 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Saad Raees Mapkar | Cyber Security</title>
+    <title>Saad Mapkar | Personal Website</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
 
-body {
-    background: #02070a;
-    color: #ffffff;
-    overflow-x: hidden;
-}
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #020617;
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
 
-/* Animated background */
-body::before {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: #00ff99;
-    opacity: 0.08;
-    filter: blur(120px);
-    border-radius: 50%;
-    top: -150px;
-    left: -150px;
-    z-index: -1;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
 
-body::after {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: #00ccff;
-    opacity: 0.07;
-    filter: blur(120px);
-    border-radius: 50%;
-    bottom: -200px;
-    right: -150px;
-    z-index: -1;
-}
+        nav a:hover {
+            color: #38bdf8;
+        }
 
-/* Navigation */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 18px 7%;
-    background: rgba(2, 7, 10, 0.85);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(0,255,153,0.15);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-}
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+        }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #00ff99;
-}
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #38bdf8;
+            margin-bottom: 20px;
+        }
 
-.logo span {
-    color: white;
-}
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
 
-nav a {
-    color: #ddd;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 14px;
-    transition: 0.3s;
-}
+        .hero h1 span {
+            color: #38bdf8;
+        }
 
-nav a:hover {
-    color: #00ff99;
-}
+        .hero p {
+            font-size: 19px;
+            color: #cbd5e1;
+            margin: 8px 0;
+        }
 
-/* Hero */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 20px 60px;
-    background:
-        radial-gradient(circle at center, rgba(0,255,153,0.08), transparent 45%);
-}
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #38bdf8;
+            color: #020617;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
 
-.hero-content {
-    max-width: 850px;
-}
+        .btn:hover {
+            background: white;
+        }
 
-.profile {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #00ff99;
-    box-shadow:
-        0 0 20px #00ff99,
-        0 0 60px rgba(0,255,153,0.3);
-    margin-bottom: 30px;
-    animation: float 4s ease-in-out infinite;
-}
+        /* Sections */
+        section {
+            padding: 70px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-@keyframes float {
-    0%,100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
-}
+        section h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #38bdf8;
+        }
 
-.badge {
-    display: inline-block;
-    padding: 8px 18px;
-    border: 1px solid #00ff99;
-    border-radius: 30px;
-    color: #00ff99;
-    font-size: 13px;
-    margin-bottom: 20px;
-    background: rgba(0,255,153,0.05);
-}
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
 
-.hero h1 {
-    font-size: clamp(42px, 9vw, 78px);
-    margin-bottom: 12px;
-}
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
 
-.hero h1 span {
-    color: #00ff99;
-    text-shadow: 0 0 20px rgba(0,255,153,0.6);
-}
+        .info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
 
-.hero h2 {
-    font-size: clamp(20px, 4vw, 30px);
-    color: #00ccff;
-    margin-bottom: 20px;
-}
+        .info-box {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #334155;
+        }
 
-.hero p {
-    max-width: 650px;
-    margin: auto;
-    color: #aeb8bd;
-    font-size: 17px;
-}
+        .info-box strong {
+            display: block;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
 
-.buttons {
-    margin-top: 30px;
-}
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
 
-.btn {
-    display: inline-block;
-    padding: 13px 25px;
-    margin: 7px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
+        .skill {
+            padding: 10px 18px;
+            background: #1e293b;
+            border: 1px solid #38bdf8;
+            border-radius: 20px;
+        }
 
-.primary {
-    background: #00ff99;
-    color: #00140c;
-    box-shadow: 0 0 20px rgba(0,255,153,0.3);
-}
+        /* Instagram */
+        .instagram {
+            text-align: center;
+        }
 
-.secondary {
-    border: 1px solid #00ff99;
-    color: #00ff99;
-}
+        .instagram a {
+            color: #38bdf8;
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.btn:hover {
-    transform: translateY(-4px);
-}
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+            border-top: 1px solid #334155;
+        }
 
-/* Sections */
-section {
-    padding: 100px 8%;
-}
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
 
-.title {
-    text-align: center;
-    font-size: 38px;
-    margin-bottom: 50px;
-}
-
-.title span {
-    color: #00ff99;
-}
-
-/* About */
-.about-box {
-    max-width: 850px;
-    margin: auto;
-    padding: 35px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(0,255,153,0.15);
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.3);
-}
-
-.about-box p {
-    color: #b7c1c5;
-    font-size: 17px;
-    margin-bottom: 18px;
-}
-
-.about-box strong {
-    color: #00ff99;
-}
-
-/* Cards */
-.cards {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
-    gap: 20px;
-}
-
-.card {
-    padding: 30px 20px;
-    background: rgba(255,255,255,0.035);
-    border: 1px solid rgba(0,255,153,0.12);
-    border-radius: 18px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #00ff99;
-    box-shadow: 0 0 30px rgba(0,255,153,0.12);
-}
-
-.icon {
-    font-size: 42px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #9ba7ac;
-    font-size: 14px;
-}
-
-/* Education */
-.education {
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-.education-box {
-    padding: 35px;
-    border-left: 3px solid #00ff99;
-    background: rgba(0,255,153,0.03);
-    border-radius: 0 18px 18px 0;
-}
-
-.education-box h3 {
-    color: #00ff99;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.education-box p {
-    color: #adb7bb;
-}
-
-/* Personal information */
-.info-grid {
-    max-width: 850px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 18px;
-}
-
-.info {
-    padding: 22px;
-    background: rgba(255,255,255,0.035);
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.07);
-}
-
-.info small {
-    color: #00ff99;
-}
-
-.info p {
-    margin-top: 6px;
-    color: #ddd;
-}
-
-/* Contact */
-.contact {
-    text-align: center;
-    background: rgba(0,255,153,0.025);
-}
-
-.contact p {
-    color: #aab4b8;
-}
-
-.instagram {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 30px;
-    border-radius: 30px;
-    background: #e1306c;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.instagram:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 25px rgba(225,48,108,0.4);
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #657177;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    font-size: 13px;
-}
-
-/* Mobile */
-@media(max-width:650px) {
-
-    header {
-        padding: 15px 5%;
-    }
-
-    nav a {
-        margin-left: 7px;
-        font-size: 11px;
-    }
-
-    section {
-        padding: 80px 6%;
-    }
-
-    .profile {
-        width: 145px;
-        height: 145px;
-    }
-
-    .about-box {
-        padding: 25px;
-    }
-}
-</style>
+            nav a {
+                margin: 0 5px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">SAAD<span>.</span></div>
-
+    <!-- NAVIGATION -->
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
-        <a href="#games">Games</a>
+        <a href="#hobbies">Hobbies</a>
         <a href="#contact">Contact</a>
     </nav>
-</header>
 
-<!-- HOME -->
-<section class="hero" id="home">
 
-    <div class="hero-content">
+    <!-- HOME -->
+    <div class="hero" id="home">
 
-        <img src="profile.jpg"
-             alt="Saad Raees Mapkar"
-             class="profile">
+        <div>
 
-        <div class="badge">
-            🛡️ CYBER SECURITY STUDENT
-        </div>
+            <!-- Profile Photo -->
+            <!-- Change profile.jpg to your actual photo filename -->
+            <img src="profile.jpg" alt="Saad Mapkar" class="profile-img">
 
-        <h1>
-            Hi, I'm <span>Saad</span>
-        </h1>
+            <h1>Hello, I'm <span>Saad Mapkar</span></h1>
 
-        <h2>
-            <span id="typing"></span>
-        </h2>
+            <p>Cyber Security Enthusiast 🔐</p>
 
-        <p>
-            Welcome to my personal space on the internet.
-            I'm Saad Raees Mapkar, a Cyber Security student
-            from Mumbai who loves technology, movies and learning new things.
-        </p>
+            <p>Welcome to my personal website.</p>
 
-        <div class="buttons">
-            <a href="#about" class="btn primary">
-                Explore My Profile
-            </a>
+            <a href="#about" class="btn">Explore My Profile</a>
 
-            <a href="https://www.instagram.com/saadmapkar/"
-               target="_blank"
-               class="btn secondary">
-                Instagram
-            </a>
-        </div>
-
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-
-    <h2 class="title">
-        About <span>Me</span>
-    </h2>
-
-    <div class="about-box">
-
-        <p>
-            My name is <strong>Saad Raees Mapkar</strong>.
-            I was born in Mumbai on
-            <strong>16 December 2005</strong>.
-        </p>
-
-        <p>
-            I am currently studying
-            <strong>Cyber Security</strong> and developing
-            my knowledge in technology and digital security.
-        </p>
-
-        <p>
-            I enjoy exploring new technologies and continuously
-            learning new things that can help me grow personally
-            and professionally.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- PERSONAL INFO -->
-<section>
-
-    <h2 class="title">
-        Personal <span>Info</span>
-    </h2>
-
-    <div class="info-grid">
-
-        <div class="info">
-            <small>NAME</small>
-            <p>Saad Raees Mapkar</p>
-        </div>
-
-        <div class="info">
-            <small>BORN</small>
-            <p>Mumbai, India</p>
-        </div>
-
-        <div class="info">
-            <small>BIRTH DATE</small>
-            <p>16 December 2005</p>
-        </div>
-
-        <div class="info">
-            <small>FIELD</small>
-            <p>Cyber Security</p>
         </div>
 
     </div>
 
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
+    <!-- ABOUT -->
+    <section id="about">
 
-    <h2 class="title">
-        My <span>Interests</span>
-    </h2>
-
-    <div class="cards">
+        <h2>About Me</h2>
 
         <div class="card">
-            <div class="icon">🛡️</div>
-            <h3>Cyber Security</h3>
+
+            <h3>Who Am I?</h3>
+
             <p>
-                Learning about cyber security,
-                technology and digital protection.
+                Hello! My name is <strong>Saad Mapkar</strong>.
+                I am passionate about technology, computers and cybersecurity.
+                I enjoy learning new things and exploring the world of technology.
             </p>
+
+            <br>
+
+            <p>
+                I am currently studying cybersecurity and working toward
+                developing my technical skills and knowledge.
+            </p>
+
         </div>
+
+    </section>
+
+
+    <!-- PERSONAL INFORMATION -->
+    <section>
+
+        <h2>Personal Information</h2>
+
+        <div class="info">
+
+            <div class="info-box">
+                <strong>Name</strong>
+                Saad Mapkar
+            </div>
+
+            <div class="info-box">
+                <strong>Field</strong>
+                Cyber Security
+            </div>
+
+            <div class="info-box">
+                <strong>Interest</strong>
+                Technology & Cybersecurity
+            </div>
+
+            <div class="info-box">
+                <strong>Location</strong>
+                Mumbai, India
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <h2>Education</h2>
 
         <div class="card">
-            <div class="icon">💻</div>
-            <h3>Technology</h3>
-            <p>
-                Exploring technology and discovering
-                new things in the digital world.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🎬</div>
-            <h3>Movies</h3>
-            <p>
-                I enjoy watching action,
-                comedy and adventure movies.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🚀</div>
-            <h3>Learning</h3>
-            <p>
-                Always interested in learning,
-                improving and trying new things.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- EDUCATION -->
-<section>
-
-    <h2 class="title">
-        My <span>Education</span>
-    </h2>
-
-    <div class="education">
-
-        <div class="education-box">
 
             <h3>Cyber Security</h3>
 
             <p>
-                Currently studying Cyber Security
-                and building my foundation in the field
-                of digital security and technology.
+                Currently studying cybersecurity and learning about
+                computer networks, information security and ethical
+                cybersecurity practices.
             </p>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
-    
-</section>
 
-<!-- GAMES -->
-<section id="games">
+    <!-- SKILLS -->
+    <section id="skills">
 
-    <h2 class="title">Play <span>Games</span></h2>
+        <h2>My Skills & Interests</h2>
 
-    <div class="games-container">
+        <div class="skills">
 
-        <div class="game-box">
-            <h3>🎯 Guess the Number</h3>
-            <p>Try to guess the secret number!</p>
-            <button onclick="guessNumber()">Play Game</button>
+            <div class="skill">Cyber Security</div>
+            <div class="skill">Computer Networking</div>
+            <div class="skill">Web Development</div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Technology</div>
+
         </div>
 
-        <div class="game-box">
-            <h3>❤️ Love Quiz</h3>
-            <p>Test your romantic knowledge!</p>
-            <button onclick="loveQuiz()">Play Game</button>
+    </section>
+
+
+    <!-- HOBBIES -->
+    <section id="hobbies">
+
+        <h2>My Hobbies</h2>
+
+        <div class="card">
+
+            <h3>🎬 Movies</h3>
+
+            <p>
+                I enjoy watching action, comedy and adventure movies.
+            </p>
+
         </div>
 
-        <div class="game-box">
-            <h3>✊ Rock Paper Scissors</h3>
-            <p>Challenge the computer!</p>
-            <button onclick="rps()">Play Game</button>
+        <div class="card">
+
+            <h3>💻 Technology</h3>
+
+            <p>
+                I enjoy exploring technology, computers and cybersecurity.
+            </p>
+
         </div>
 
-    </div>
+        <div class="card">
 
-</section>
+            <h3>🔐 Cybersecurity</h3>
 
-<!-- CONTACT -->
-<!-- CONTACT -->
-<section class="contact" id="contact">
+            <p>
+                I enjoy learning about cybersecurity and developing
+                my technical knowledge.
+            </p>
 
-    <h2 class="title">
-        Connect <span>With Me</span>
-    </h2>
+        </div>
 
-    <p>
-        You can find me on Instagram.
-    </p>
+    </section>
 
-    <a href="https://www.instagram.com/saadmapkar/"
-       target="_blank"
-       class="instagram">
-        📷 Follow Me on Instagram
-    </a>
 
-</section>
+    <!-- CONTACT -->
+    <section id="contact">
 
-<footer>
-    © 2026 Saad Raees Mapkar • Personal Website
-</footer>
-<script>
-const words = [
-    "Cyber Security Student",
-    "Technology Enthusiast",
-    "Movie Lover",
-    "Future Cyber Security Professional"
-];
+        <h2>Connect With Me</h2>
 
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+        <div class="card instagram">
 
-function typeEffect() {
-    const typing = document.getElementById("typing");
-    const word = words[wordIndex];
+            <p>Follow me on Instagram</p>
 
-    if (!deleting) {
-        typing.textContent = word.substring(0, charIndex + 1);
-        charIndex++;
+            <br>
 
-        if (charIndex === word.length) {
-            deleting = true;
-            setTimeout(typeEffect, 1500);
-            return;
-        }
-    } else {
-        typing.textContent = word.substring(0, charIndex - 1);
-        charIndex--;
+            <a href="https://www.instagram.com/saadmapkar" target="_blank">
+                📸 @saadmapkar
+            </a>
 
-        if (charIndex === 0) {
-            deleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-        }
-    }
+        </div>
 
-    setTimeout(typeEffect, deleting ? 50 : 90);
-}
+    </section>
 
-typeEffect();
-    function guessNumber() {
-    const secret = Math.floor(Math.random() * 10) + 1;
-    const guess = prompt("🎯 Guess a number between 1 and 10:");
 
-    if (guess == secret) {
-        alert("🎉 Correct! You guessed it!");
-    } else {
-        alert("❌ Wrong! The number was " + secret);
-    }
-}
+    <!-- FOOTER -->
+    <footer>
 
-function loveQuiz() {
-    const answer = prompt("❤️ What is the most important thing in a relationship?\n\nA) Trust\nB) Money\nC) Games");
+        <p>© 2026 Saad Mapkar</p>
 
-    if (answer && answer.toUpperCase() === "A") {
-        alert("❤️ Correct! Trust is everything!");
-    } else {
-        alert("💕 Nice try! The answer is Trust.");
-    }
-}
+        <p>Cyber Security Enthusiast 🔐</p>
 
-function rps() {
-    const choices = ["Rock", "Paper", "Scissors"];
-    const player = prompt("✊ Rock, Paper or Scissors?");
+    </footer>
 
-    if (!player) return;
-
-    const computer = choices[Math.floor(Math.random() * 3)];
-
-    alert("You: " + player + "\nComputer: " + computer);
-}
-    /* =========================
-   GAMES SECTION
-   ========================= */
-
-#games {
-    padding: 100px 8%;
-    text-align: center;
-    background:
-        radial-gradient(circle at top, rgba(0,255,153,0.08), transparent 45%);
-}
-
-#games .title {
-    font-size: clamp(32px, 6vw, 50px);
-    margin-bottom: 45px;
-    color: white;
-}
-
-#games .title span {
-    color: #00ff99;
-    text-shadow: 0 0 20px rgba(0,255,153,0.6);
-}
-
-.games-container {
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.game-box {
-    padding: 30px 22px;
-    border: 1px solid rgba(0,255,153,0.45);
-    border-radius: 22px;
-    background: linear-gradient(
-        145deg,
-        rgba(0,255,153,0.10),
-        rgba(0,20,25,0.85)
-    );
-    box-shadow:
-        0 0 20px rgba(0,255,153,0.08),
-        inset 0 0 20px rgba(0,255,153,0.03);
-    transition: 0.35s ease;
-}
-
-.game-box:hover {
-    transform: translateY(-10px);
-    border-color: #00ff99;
-    box-shadow:
-        0 0 25px rgba(0,255,153,0.35),
-        0 0 60px rgba(0,255,153,0.12);
-}
-
-.game-box h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #00ff99;
-}
-
-.game-box p {
-    color: #aebfc4;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.game-box button {
-    border: 1px solid #00ff99;
-    background: transparent;
-    color: #00ff99;
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.game-box button:hover {
-    background: #00ff99;
-    color: #001510;
-    box-shadow: 0 0 25px rgba(0,255,153,0.6);
-    transform: scale(1.05);
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-
-    #games {
-        padding: 80px 6%;
-    }
-
-    .games-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .game-box {
-        padding: 28px 20px;
-    }
-
-    .game-box h3 {
-        font-size: 20px;
-    }
-    }
-    <script>
-
-function guessNumber() {
-    const secret = Math.floor(Math.random() * 10) + 1;
-    const guess = prompt("🎯 Guess a number between 1 and 10:");
-
-    if (guess == secret) {
-        alert("🎉 Correct! You guessed it!");
-    } else {
-        alert("❌ Wrong! The number was " + secret);
-    }
-}
-
-function loveQuiz() {
-    const answer = prompt(
-        "❤️ What is the most important thing in a relationship?\n\nA) Trust\nB) Money\nC) Games"
-    );
-
-    if (answer && answer.toUpperCase() === "A") {
-        alert("❤️ Correct! Trust is everything!");
-    } else {
-        alert("💕 The answer is Trust!");
-    }
-}
-
-function rps() {
-    const choices = ["Rock", "Paper", "Scissors"];
-    const player = prompt("✊ Type Rock, Paper or Scissors:");
-
-    if (!player) return;
-
-    const computer = choices[Math.floor(Math.random() * 3)];
-
-    alert("You: " + player + "\nComputer: " + computer);
-}
-
-</script>
-    
-
-</body>
-    </html>
 </body>
 </html>
+      
