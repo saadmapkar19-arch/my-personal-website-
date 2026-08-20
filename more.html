@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saad | My Gaming Interests</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #020617;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(2, 6, 23, 0.96);
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #164e63;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #22d3ee;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 55vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                radial-gradient(circle at top,
+                #164e63,
+                #071426 45%,
+                #020617 80%);
+        }
+
+        .hero-icon {
+            font-size: 75px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 10vw, 65px);
+            color: #22d3ee;
+            text-shadow: 0 0 25px rgba(34, 211, 238, 0.45);
+        }
+
+        .hero h2 {
+            margin-top: 10px;
+            color: #e2e8f0;
+            font-size: 21px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #94a3b8;
+            margin-top: 15px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #22d3ee;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        /* GAME CARDS */
+
+        .games {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+        }
+
+        .game-card {
+            background: #071426;
+            border: 1px solid #164e63;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: #22d3ee;
+            box-shadow:
+                0 0 25px rgba(34, 211, 238, 0.2);
+        }
+
+        .game-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .game-card h3 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .game-card p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 6px 13px;
+            border-radius: 20px;
+            background: #0c4a6e;
+            color: #67e8f9;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* PLAYSTATION */
+
+        .playstation {
+            margin-top: 60px;
+            background: #071426;
+            border: 1px solid #164e63;
+            border-radius: 22px;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .playstation h2 {
+            color: #22d3ee;
+            margin-bottom: 15px;
+        }
+
+        .playstation p {
+            color: #94a3b8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .controller {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        /* BACK BUTTON */
+
+        .back {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .back a {
+            display: inline-block;
+            padding: 13px 25px;
+            border: 2px solid #22d3ee;
+            border-radius: 30px;
+            color: #22d3ee;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back a:hover {
+            background: #22d3ee;
+            color: #020617;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            background: #01040b;
+            border-top: 1px solid #164e63;
+            color: #64748b;
+        }
+
+        footer strong {
+            color: #22d3ee;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav a {
+                font-size: 12px;
+                margin: 0 4px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 55px 17px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#gaming">Gaming</a>
+        <a href="#playstation">PlayStation</a>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <div class="hero-icon">🎮</div>
+
+        <h1>MY GAMING WORLD</h1>
+
+        <h2>Games I Enjoy Playing</h2>
+
+        <p>
+            Gaming is one of my favorite ways to relax,
+            have fun and experience different worlds.
+        </p>
+
+    </div>
+
+
+    <!-- GAMES -->
+
+    <div class="container" id="gaming">
+
+        <h2 class="section-title">
+            🎯 My Favorite Games
+        </h2>
+
+        <div class="games">
+
+            <!-- GTA -->
+
+            <div class="game-card">
+
+                <div class="game-icon">🚗</div>
+
+                <h3>GTA</h3>
+
+                <p>
+                    Grand Theft Auto is one of my favorite
+                    open-world gaming experiences, with
+                    action, cars, missions and exploration.
+                </p>
+
+                <span class="tag">
+                    OPEN WORLD
+                </span>
+
+            </div>
+
+
+            <!-- FREE FIRE -->
+
+            <div class="game-card">
+
+                <div class="game-icon">🔥</div>
+
+                <h3>Free Fire</h3>
+
+                <p>
+                    A fast-paced battle royale game
+                    featuring intense matches,
+                    strategy and survival.
+                </p>
+
+                <span class="tag">
+                    BATTLE ROYALE
+                </span>
+
+            </div>
+
+
+            <!-- PUBG -->
+
+            <div class="game-card">
+
+                <div class="game-icon">🎯</div>
+
+                <h3>PUBG / BGMI</h3>
+
+                <p>
+                    Tactical battle royale gameplay,
+                    teamwork, strategy and intense
+                    survival matches.
+                </p>
+
+                <span class="tag">
+                    SURVIVAL
+                </span>
+
+            </div>
+
+
+            <!-- WWE -->
+
+            <div class="game-card">
+
+                <div class="game-icon">🤼</div>
+
+                <h3>WWE</h3>
+
+                <p>
+                    Wrestling games with exciting
+                    matches, legendary superstars,
+                    championships and action.
+                </p>
+
+                <span class="tag">
+                    WRESTLING
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PLAYSTATION -->
+
+        <div class="playstation" id="playstation">
+
+            <div class="controller">🎮</div>
+
+            <h2>PlayStation</h2>
+
+            <p>
+                I enjoy playing games on PlayStation,
+                especially action, sports, wrestling
+                and open-world games.
+            </p>
+
+        </div>
+
+
+        <!-- BACK -->
+
+        <div class="back">
+
+            <a href="index.html">
+                ← Back to My Website
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>Saad Raees Mapkar</strong>
+        </p>
+
+        <p>
+            Gaming Enthusiast 🎮
+        </p>
+
+    </footer>
+
+</body>
+</html>
