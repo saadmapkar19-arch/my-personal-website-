@@ -186,11 +186,104 @@
                 margin: 0 5px;
                 font-size: 14px;
             }
-        }
+        /* ===== MODERN HERO SECTION ===== */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+        radial-gradient(circle at top, #123c63 0%, #06111f 45%, #020617 100%);
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin: 10px 0;
+    color: #00e5ff;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.hero h2 {
+    font-size: 22px;
+    margin: 10px 0;
+    color: #ffffff;
+}
+
+.hero p {
+    max-width: 600px;
+    color: #b8c7d9;
+    font-size: 17px;
+    margin: 15px auto 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    background: #0077ff;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.6);
+}
+
+.hero-btn.secondary {
+    background: transparent;
+    border: 2px solid #00e5ff;
+    color: #00e5ff;
+}
+
+.hero-btn.secondary:hover {
+    background: #00e5ff;
+    color: #020617;
+}
     </style>
 </head>
 
 <body>
+<!-- ===== HERO SECTION ===== -->
+
+<section class="hero" id="home">
+
+    <h1>SAAD RAEES MAPKAR</h1>
+
+    <h2>Cyber Security Enthusiast</h2>
+
+    <p>
+        Welcome to my personal website.
+        I am passionate about cybersecurity, networking,
+        technology, gaming and exploring the digital world.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#about" class="hero-btn">
+            Explore My Profile
+        </a>
+
+        <a href="#projects" class="hero-btn secondary">
+            My Projects
+        </a>
+
+    </div>
+
+</section>
 
     <!-- NAVIGATION -->
     <nav>
